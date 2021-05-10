@@ -1,0 +1,8 @@
+{
+  "name": "textreader",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "W.T. Chang",
+  "license": "MIT",
+  "dependencies": {}
+}
