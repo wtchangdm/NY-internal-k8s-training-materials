@@ -12,9 +12,6 @@ const readFileByLine = async path => {
     crlfDelay: Infinity
   })
   rl.on('line', console.log)
-  // for await (const line of rl) {
-  //   console.log(line)
-  // }
   await once(rl, 'close')
 }
 
