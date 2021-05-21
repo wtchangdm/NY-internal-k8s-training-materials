@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: echo
+  name: echo2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: echo
+  template:
+    metadata:
+      labels:
+        app: echo
+    spec:
+      containers:
+      - command:
+        - sh
+        - -c
+        - "echo I am pod ${HOSTNAME}, and was created by ReplicaSet ${HOSTNAME%-*}.; tail -f /dev/null"
+        image: public.ecr.aws/ubuntu/ubuntu
+        name: echo
+        ports:
+          - name: http
+            containerPort: 80
+        resources:
+          requests:
+            cpu: 50m
+            memory: 50Mi
+          limits:
+            cpu: 50m
+            memory: 50Mi

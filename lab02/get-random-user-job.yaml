@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: get-random-user
+  labels:
+    app: get-random-user
+spec:
+  parallelism: 2
+  completions: 6
+  template:
+    metadata:
+      labels:
+        app: get-random-user
+    spec:
+      containers:
+      - command:
+        - sh
+        - -c
+        - "echo Pod ${HOSTNAME} got data from user `curl -sSL https://randomuser.me/api/?format=csv\\&inc=email | grep -v email | cut -d: -f2`"
+        image: curlimages/curl
+        name: get-random-user
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+      restartPolicy: Never
