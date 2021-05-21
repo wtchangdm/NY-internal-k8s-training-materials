@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: envlab-config-files
+data:
+  Dockerfile: |
+    ARG RUNETIME=node:15.14.0-alpine
+
+    FROM $RUNETIME
+    WORKDIR /app
+    COPY package.json yarn.lock app.js /app/
+
+    RUN apk add --no-cache tini && \
+        yarn autoclean --init && \
+        echo '*.d.ts' >> .yarnclean && \
+        echo '*.js.map' >> .yarnclean && \
+        yarn --prod
+    # Tini is now available at /sbin/tini
+    ENTRYPOINT ["/sbin/tini", "--"]
+
+    CMD [ "node", "app.js" ]
+
+  package.json: |
+    {
+      "name": "textreader",
+      "version": "1.0.0",
+      "main": "app.js",
+      "author": "W.T. Chang",
+      "license": "MIT",
+      "dependencies": {}
+    }

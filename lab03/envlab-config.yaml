@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-lab-config
+data:
+  COLOR: "green"
+  REFRESH_INTERVAL: "499"

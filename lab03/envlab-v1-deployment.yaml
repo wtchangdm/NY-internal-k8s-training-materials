@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: envlab
+    version: "1"
+  name: envlab-v1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: envlab
+      version: "1"
+  template:
+    metadata:
+      labels:
+        app: envlab
+        version: "1"
+    spec:
+      imagePullSecrets:
+        - name: test
+      containers:
+      - image: <PRIVATE_REGISTRY>/k8s-training/wtchangdm/envlab:0.0.1
+        name: envlab
+        ports:
+          - containerPort: 3000
+            name: http
+        # Env can be imported entirely from ConfigMap
+        envFrom:
+          - configMapRef:
+              name: env-lab-config
+              optional: true
+        env:
+          # Or only import one from ConfigMap
+          - name: REFRESH_INTERVAL
+            valueFrom:
+              configMapKeyRef:
+                key: REFRESH_INTERVAL
+                name: env-lab-config
+                optional: true
+          - name: COLOR
+            value: blue
+          - name: WEB_MODE
+            value: "true"
+          - name: SECRET_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: env-lab-secret
+                key: SECRET_PASSWORD
+                optional: true
+          - name: VERSION
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.labels['version']
+        resources:
+          limits:
+            cpu: 50m
+            memory: 50Mi
+          requests:
+            cpu: 50m
+            memory: 50Mi
+        volumeMounts:
+          - name: env-config-volume
+            mountPath: /etc/appconfig
+            readOnly: true
+      volumes:
+        - name: env-config-volume
+          configMap:
+            defaultMode: 400
+            name: envlab-config-files
+            optional: true
