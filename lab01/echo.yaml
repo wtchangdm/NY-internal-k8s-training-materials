@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: echo
-  name: echo2
+  name: echo
 spec:
   replicas: 1
   selector:
@@ -21,9 +21,6 @@ spec:
         - "echo I am pod ${HOSTNAME}, and was created by ReplicaSet ${HOSTNAME%-*}.; tail -f /dev/null"
         image: public.ecr.aws/ubuntu/ubuntu
         name: echo
-        ports:
-          - name: http
-            containerPort: 80
         resources:
           requests:
             cpu: 50m
