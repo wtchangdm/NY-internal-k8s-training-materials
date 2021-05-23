@@ -2,7 +2,7 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   labels:
-      app: get-random-user
+    app: get-random-user
   name: get-random-user
 spec:
   jobTemplate:
