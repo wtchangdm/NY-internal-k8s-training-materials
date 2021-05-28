@@ -39,7 +39,7 @@ spec:
                 name: env-lab-config
                 optional: true
           - name: COLOR
-            value: blue
+            value: green
           - name: WEB_MODE
             value: "true"
           - name: SECRET_PASSWORD
