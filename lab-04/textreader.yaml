@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: textreader
+  name: textreader
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: textreader
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: textreader
+    spec:
+      initContainers:
+        - image: public.ecr.aws/runecast/busybox:1.32.1
+          name: busybox
+          command:
+            - sh
+            - -c
+            - base64 /dev/urandom | head -c 250000000 > /lab/file.txt
+          resources:
+            requests:
+              memory: 50Mi
+            limits:
+              memory: 50Mi
+          volumeMounts:
+          - name: tmpdir
+            mountPath: /lab/
+      containers:
+      - image: wtchangdm/textreader
+        name: textreader
+        env:
+          - name: INPUT_FILE
+            value: "/lab/file.txt"
+          - name: USE_STREAM
+            value: "true"
+          - name: REPORT_MEM
+            value: "false"
+          - name: DO_NOT_EXIT
+            value: "true"
+        resources:
+          requests:
+            cpu: 100m
+            memory: 50Mi
+          limits:
+            cpu: 100m
+            memory: 50Mi
+        volumeMounts:
+          - name: tmpdir
+            mountPath: /lab/
+            readOnly: true
+      volumes:
+        - name: tmpdir
+          emptyDir: {}
