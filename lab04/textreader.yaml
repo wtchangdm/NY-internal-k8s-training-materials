@@ -37,7 +37,7 @@ spec:
           - name: INPUT_FILE
             value: "/lab/file.txt"
           - name: USE_STREAM
-            value: "true"
+            value: "false"
           - name: REPORT_MEM
             value: "false"
           - name: DO_NOT_EXIT
