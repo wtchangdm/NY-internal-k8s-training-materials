@@ -22,6 +22,8 @@ spec:
       containers:
       - image: <PRIVATE_REGISTRY>/k8s-training/wtchangdm/envlab:0.0.1
         name: envlab
+        # Uncomment the following lines to enable readiness
+        #
         # readinessProbe:
         #   periodSeconds: 5
         #   successThreshold: 2
