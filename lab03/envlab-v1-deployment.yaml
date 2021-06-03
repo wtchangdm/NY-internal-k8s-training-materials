@@ -22,6 +22,13 @@ spec:
       containers:
       - image: <PRIVATE_REGISTRY>/k8s-training/wtchangdm/envlab:0.0.1
         name: envlab
+        # readinessProbe:
+        #   periodSeconds: 5
+        #   successThreshold: 2
+        #   failureThreshold: 3
+        #   httpGet:
+        #     path: /health
+        #     port: 3000
         ports:
           - containerPort: 3000
             name: http
