@@ -1,10 +1,8 @@
 #!/bin/bash
 
-read -rp "This will teardown current k3d cluster! Do you understand the risk? 😑 (y/N)" answer
+read -rp "Install ingress-nginx? (y/N)" answer
 
 if [[ "$answer" == "y" ]]; then
-    k3d cluster delete
-    k3d cluster create -p "8081:80@loadbalancer" --k3s-server-arg --disable=traefik --k3s-server-arg --disable=metrics-server
     curl "https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3" | bash
     helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
     helm repo update
