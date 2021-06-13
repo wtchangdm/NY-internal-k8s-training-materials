@@ -39,7 +39,7 @@ function createK3dCluster () {
   k3d cluster create -p "8081:80@loadbalancer"
 }
 
-./extend-cloud9-ebs.sh 30
+./extend-cloud9-ebs.sh 100
 checkService docker
 removeUnneededOCIImages
 installDeps

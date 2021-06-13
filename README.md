@@ -39,7 +39,7 @@ $ cd provisioning
 $ ./provision.sh
 ```
 
-It will extend EBS size to 30GiB, then install tools like kubectl and k3d to complete the labs of this training.
+It will extend EBS size to 100GiB, then install tools like kubectl and k3d to complete the labs of this training.
 
 [1]: https://docs.google.com/presentation/d/1yGdsDwq5BSf5Rf3WvciiZOy0Fgq80LgMi4IsAF9nqT4/edit#slide=id.gdf8ff4bb1d_0_0
 [2]: https://docs.google.com/presentation/d/1B-DntJk7K2Las7B_n2MWA2sy7acnVY2dnfRU2bYpK_Q/edit#slide=id.gdd983ebc7c_0_1130
