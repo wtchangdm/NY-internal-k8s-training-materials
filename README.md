@@ -2,7 +2,33 @@
 
 This repo contains the internal Kubernetes traininng materials.
 
-For slides, click [here (TBD)][1]
+## Slides
+
+- Part 1:
+  - What's Kubernetes?
+  - Architecture and terminologies
+  - Namespace
+  - Pod
+  - Pod and Common Worklods
+  - Labels and Annotations
+  - ConfigMap
+  - Secret
+
+- Part 2:
+  - Connectivity
+    - Service & Load Balancing
+    - Ingress & Ingress Controller
+  - Pod Lifecyle
+    - Lifecycle
+    - Probe
+    - Graceful Shutdown
+  - Pod Horizontal Autoscaler
+  - Trouble Shooting
+    - OOM Killed
+    - ImagePullBackOff
+    - CrashLoopBackOff
+    - CreateContainerConfigError
+
 
 ## Provisioning
 
@@ -15,4 +41,5 @@ $ ./provision.sh
 
 It will extend EBS size to 30GiB, then install tools like kubectl and k3d to complete the labs of this training.
 
-[1]: ./
+[1]: https://docs.google.com/presentation/d/1yGdsDwq5BSf5Rf3WvciiZOy0Fgq80LgMi4IsAF9nqT4/edit#slide=id.gdf8ff4bb1d_0_0
+[2]: https://docs.google.com/presentation/d/1B-DntJk7K2Las7B_n2MWA2sy7acnVY2dnfRU2bYpK_Q/edit#slide=id.gdd983ebc7c_0_1130
