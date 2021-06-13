@@ -4,7 +4,7 @@ This repo contains the internal Kubernetes traininng materials.
 
 ## Slides
 
-- Part 1:
+- [Kubernetes Training: Part 1][1]:
   - What's Kubernetes?
   - Architecture and terminologies
   - Namespace
@@ -14,7 +14,7 @@ This repo contains the internal Kubernetes traininng materials.
   - ConfigMap
   - Secret
 
-- Part 2:
+- [Kubernetes Training: Part 2][2]:
   - Connectivity
     - Service & Load Balancing
     - Ingress & Ingress Controller
