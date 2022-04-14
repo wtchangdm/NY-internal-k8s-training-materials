@@ -22,7 +22,7 @@ This repo contains the internal Kubernetes traininng materials.
     - Lifecycle
     - Probe
     - Graceful Shutdown
-  - Pod Horizontal Autoscaler
+  - Horizontal Pod Autoscaler
   - Trouble Shooting
     - OOM Killed
     - ImagePullBackOff
