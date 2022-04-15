@@ -24,7 +24,7 @@ This repo contains the internal Kubernetes traininng materials.
     - Graceful Shutdown
   - Horizontal Pod Autoscaler
   - Trouble Shooting
-    - OOM Killed
+    - OOMKilled
     - ImagePullBackOff
     - CrashLoopBackOff
     - CreateContainerConfigError
