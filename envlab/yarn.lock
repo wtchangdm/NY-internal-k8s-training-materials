@@ -127,10 +127,10 @@ fast-uri@^3.0.0, fast-uri@^3.0.1:
   resolved "https://registry.yarnpkg.com/fast-uri/-/fast-uri-3.1.2.tgz#8af3d4fc9d3e71b11572cc2673b514a7d1a8c8ec"
   integrity sha512-rVjf7ArG3LTk+FS6Yw81V1DLuZl1bRbNrev6Tmd/9RaroeeRRJhAt7jg/6YFxbvAQXUCavSoZhPPj6oOx+5KjQ==
 
-fastify@^5.8.3:
-  version "5.8.3"
-  resolved "https://registry.yarnpkg.com/fastify/-/fastify-5.8.3.tgz#78b5006cf0731d788457b19bd482805316424c8c"
-  integrity sha512-XJXpRQ41+rsJ/GLeP9vyDC+fBXilcTlEXokMSexkdEkla4uf7ZQNaI5xl3el+kW5TZQulqYxLr659ey/KX7XmQ==
+fastify@^5.8.5:
+  version "5.8.5"
+  resolved "https://registry.yarnpkg.com/fastify/-/fastify-5.8.5.tgz#c452224295e0ca550bcd0efc3f7d3e90e9c11955"
+  integrity sha512-Yqptv59pQzPgQUSIm87hMqHJmdkb1+GPxdE6vW6FRyVE9G86mt7rOghitiU4JHRaTyDUk9pfeKmDeu70lAwM4Q==
   dependencies:
     "@fastify/ajv-compiler" "^4.0.5"
     "@fastify/error" "^4.0.0"
